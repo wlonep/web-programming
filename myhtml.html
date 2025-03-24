@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML</title>
+	</head>
+	<style>
+		table, th, td {
+	    	border: 1px solid black;
+	        border-collapse: collapse;
+		}
+		th, td {
+			width: 100px;
+			height: 20px;
+			text-align: center;
+			padding: 5px;
+		}
+		.os {
+			background: rgba(255, 255, 0, 0.7);
+		}
+		.os::before {
+			content: "운영체제";
+		}
+		.prob {
+			background: rgba(0,255,255,0.7);
+		}
+		.prob::before {
+			content: "확률과통계";
+		}
+		.str {
+			background: rgba(0,255,0,0.7);
+		}
+		.str::before {
+			content: "자료구조";
+		}
+		.basic {
+			background: rgba(255,0,0,0.7);
+		}
+		.basic::before {
+			font-size: 15px;
+			content: "전공기초프로젝트";
+		}
+		.web {
+			background: rgba(0, 0, 255, 0.5);
+		}
+		.web::before {
+			content: "웹프로그래밍";
+		}
+		.aiot {
+			text-align: left;
+			background: rgba(255, 0, 255, 0.4);
+		}
+		.aiot::before {
+			content: "AIoT의기초";
+		}
+	</style>
+	<body>
+		<a href="https://www.konkuk.ac.kr" target="_blank">
+			<img src="https://www.konkuk.ac.kr/sites/konkuk/images/common/logo-top-color.png" alt="logo" width="100">
+		</a>
+		<h1>박지원</h1>
+		<h2><i><a href="https://www.konkuk.ac.kr" target="_blank">건국대학교</a> <a href="https://cse.konkuk.ac.kr" target="_blank">컴퓨터공학부</a></i></h2>
+		<hr/>
+		<h2>2025년 1학기 과목</h2>
+		<ul>
+			<li>웹프로그래밍</li>
+			<li>자료구조</li>
+			<li>확률과통계</li>
+			<li>전공기초프로젝트</li>
+			<li>운영체제</li>
+			<li>AIoT의기초</li>
+		</ul>
+		<hr/>
+		<h2>시간표</h2>
+		<table border="1">
+			<tr>
+				<th>시간</th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+			</tr>
+			<tr>
+				<th>09:00</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>10:00</th>
+				<td></td>
+				<td class="os" rowspan="2"></td>
+				<td></td>
+				<td class="os" rowspan="2"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>11:00</th>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>12:00</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>13:00</th>
+				<td class="prob" rowspan="2"></td>
+				<td class="str" rowspan="2"></td>
+				<td class="prob" rowspan="2"></td>
+				<td class="str" rowspan="2"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>14:00</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>15:00</th>
+				<td class="web" rowspan="2"></td>
+				<td class="basic" rowspan="2"></td>
+				<td class="web" rowspan="2"></td>
+				<td></td>
+				<td class="basic" rowspan="2"></td>
+			</tr>
+			<tr>
+				<th>16:00</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>17:00</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>e러닝</th>
+				<td class="aiot" colspan="5"></td>
+			</tr>
+
+
+
+		</table>
+	</body>
+</html>
