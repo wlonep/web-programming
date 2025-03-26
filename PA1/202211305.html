@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +14,17 @@
 			<h1 class="title">웹프로그래밍 PA#1</h1>
 			<h2 class="subtitle">202211305 박지원</h2>
 		</header>
+		<input type="radio" name="tab" id="tab1" checked>
+		<input type="radio" name="tab" id="tab2">
+		<input type="radio" name="tab" id="tab3">
+		<input type="radio" name="tab" id="tab4">
 		<nav id="nav">
-			<ul class="nav-menu">
-				<li class="nav-item"><a href="#section-1">나란 사람</a></li>
-				<li class="nav-item"><a href="#section-2">짝꿍을 소개합니다</a></li>
-				<li class="nav-item"><a href="#section-3">이곳을 소개합니다</a></li>
-				<li class="nav-item"><a href="#section-4">이렇게 다녀오세요</a></li>
-			</ul>
+			<div class="nav-menu">
+				<label for="tab1" class="nav-item">나란 사람</label>
+				<label for="tab2" class="nav-item">짝꿍을 소개합니다</label>
+				<label for="tab3" class="nav-item">이곳을 소개합니다</label>
+				<label for="tab4" class="nav-item">이렇게 다녀오세요</label>
+			</div>
 		</nav>
 		<div id="content">
 			<section id="section-1">
@@ -33,7 +37,7 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
 				</p>
 				<h2 class="section-subtitle">내 사진</h2>
-				<img src="https://placehold.co/280x430">
+				<img src="https://placehold.co/280x430" alt="my-picture">
 			</section>
 			<section id="section-2">
 				<h1 class="section-title">짝꿍 소개</h1>
@@ -41,7 +45,7 @@
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
 				</p>
 				<h2 class="section-subtitle">짝꿍 사진</h2>
-				<img src="https://placehold.co/280x430">
+				<img src="https://placehold.co/280x430" alt="partner-picture">
 				<h2 class="section-subtitle">20문 20답</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
@@ -50,28 +54,19 @@
 			<section id="section-3">
 				<h1 class="section-title">이곳을 소개합니다</h1>
 				<div class="map-wrapper">
-					<a href="https://seoulcitywall.seoul.go.kr/map_all_popup.jsp" target="_blank">
-						<img alt="map" width="500px" id="map-image"
-						src="https://seoulcitywall.seoul.go.kr/ko/images/common/img_map_view.jpg">
-						<div class="map-detail">자세히 보기</div>
-					</a>
 					<div>
-						<img src="https://seoulcitywall.seoul.go.kr/image.do?file=/wallcourse/info/2accb578-5e7f-491a-9da1-8457571945b6_0.jpg" alt="route-detail" width="80%">
+						<a href="https://seoulcitywall.seoul.go.kr/map_all_popup.jsp" target="_blank">
+							<img alt="map" width="500px" id="map-image"
+								 src="https://seoulcitywall.seoul.go.kr/ko/images/common/img_map_view.jpg">
+							<div class="map-detail">자세히 보기</div>
+						</a>
 					</div>
-				</div>
-				<div class="article-wrapper">
 					<article class="section-article">
 						<h2 class="article-title">한양도성길 남산 구간</h2>
 						<p><b>구간</b>: 장충체육관 ~ 백범광장</p>
 						<p><b>거리</b>: 4.2km</p>
 						<p><b>소요시간</b>: 도보 3시간</p>
-						<p>
-							장충체육관 뒷길에서 남산공원까지 이어지는 구간이다. 남산(목멱산, 해발 270m)은 서울의 안산(案山)에 해당하여 조선 초기부터 국태민안(國泰民安)을 비는 국사당을 이 산에 두었다. 또 정상에는 변방의 변란을 알리는 봉수대를 설치하여 궁궐에서 직접 살필 수 있게 하였다. 한강 남북을 포괄하는 현재 남산은 서울의 행정구역상 중심부에 해당하며 정상 부근에는 서울의 지리적 중심임을 표시하는 ‘서울 중심점’이 설치되어 있다. 1921년부터 1925년까지 일제가 남산 중턱에 조선신궁을 지으면서 주변 성벽을 대부분 파괴했으나 1970년대 이후의 성곽 보존 · 정비 사업과 1990년대 중반 남산 제 모습 찾기 사업을 통해 현재는 옛 모습을 상당 부분 회복하였다.<br/>
-							- 서울시 한양도성 홈페이지 -
-						</p>
-					</article>
-					<article class="section-article">
-						<h2 class="article-title">산책 루트</h2>
+						<h3 class="article-subtitle">산책 루트</h3>
 						<div>
 							<ul>
 								<li>장충체육관</li>
@@ -90,9 +85,7 @@
 								<li>백범광장</li>
 							</ul>
 						</div>
-					</article>
-					<article class="section-article">
-						<h2 class="article-title">선정 이유</h2>
+						<h3 class="article-subtitle">선정 이유</h3>
 						<div>
 							<ol>
 								<li>서울 중심지를 가로지르면서 자연 환경을 간직한 곳임</li>
@@ -103,28 +96,99 @@
 						</div>
 					</article>
 				</div>
+				<div id="height-map"></div>
 			</section>
 			<section id="section-4">
 				<h1 class="section-title">이렇게 다녀오세요</h1>
-			    <div class="gallery">
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 1"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 2"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 3"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 4"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 5"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 6"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 7"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 8"></div>
-			        <div class="gallery-item"><img src="https://placehold.co/300" alt="Image 9"></div>
-			    </div>
-			    <article class="section-article">
-					<h2 class="article-title">준비물</h2>
-					<p>
-						
+				<article class="section-article">
+					<h2 class="article-title">준비물/유의사항</h2>
+					<ul>
+						<li>등산을 해야하는 코스는 없지만 계단이 많으므로 편한 옷과 운동화 추천</li>
+						<li>남산 중턱까지는 그늘이 적으므로 햇볕이 강한 날에는 모자나 선글라스 필수</li>
+						<li>아이가 있는 가정이나 외국인 관광객이 꽤 많이 찾는 편이므로 주말에 간다면 혼잡할 수 있음</li>
+					</ul>
+				</article>
+				<article class="section-article">
+					<h2 class="article-title">대중교통</h2>
+				</article>
+				<div class="article-wrapper" style="margin-top: -30px">
+					<article class="section-article">
+						<h3 class="section-title" style="text-align: left">숭례문(백범광장)</h3>
+						<p><b>전철</b></p>
+						<ul style="list-style-type: '- '">
+							<li><code>서울역(1,4호선, GTX-A)</code> 4번 출구 → 도보 10분</li>
+							<li><code>시청역(1,2호선)</code> 8번 출구 → 도보 12분</li>
+							<li><code>회현역(4호선)</code> 5번 출구 → 도보 5분</li>
+						</ul>
+						<p><b>버스</b></p>
+						<ul style="list-style-type: '- ">
+							<li><code>402번 / 405번 / 01A번</code>백범광장 하차</li>
+						</ul>
+					</article>
+					<article class="section-article">
+						<h3 class="section-title" style="text-align: left">국립극장</h3>
+						<p><b>전철</b></p>
+						<ul style="list-style-type: '- '">
+							<li><code>동대입구역(3호선)</code> 5번 출구 → 15분</li>
+						</ul>
+						<p><b>버스</b></p>
+						<ul style="list-style-type: '- ">
+							<li><code>01A번 / 01B번 / 420번</code>국립극장.반얀트리호텔 하차</li>
+						</ul>
+					</article>
+					<article class="section-article">
+						<h3 class="section-title" style="text-align: left">장충체육관</h3>
+						<p><b>전철</b></p>
+						<ul style="list-style-type: '- '">
+							<li><code>동대입구역(3호선)</code> 5번 출구</li>
+						</ul>
+						<p><b>버스</b></p>
+						<ul style="list-style-type: '- ">
+							<li><code>01A번 / 01B번</code>동대입구역.장충동 하차</li>
+						</ul>
+					</article>
+				</div>
+				<article class="section-article sub-section">
+					<h2 class="article-title lefter">백범광장~남산 구간</h2>
+					<p class="article-description">
+						남산 정상은 케이블카나 버스를 이용하면 편리하게 이동할 수 있습니다.<br/>
+						특히 백범광장이나 장충체육관에서 01A번 버스를 이용하면 남산을 타고 백범광장에서 장충체육관까지 한 번에 갈 수 있기에 이를 이용해도 무방합니다.<br/>
+						다만 한양도성길을 온전히 따라가는 것은 아니기에 성곽의 모습과 주변 경치를 감상하고자 한다면 도보로 이동하거나 케이블카를 이용하는 것이 좋습니다.<br/>
+						백범광장에서 남산 구간을 도보로 이용한다면 그늘이 적고 계단이 많기에 마실 물이나 자외선 차단제 등을 챙기는 것을 권장합니다.<br/>
+						도심지 한가운데에 위치해 남산의 자연환경과 서울 도심지의 경치를 동시에 감상할 수 있습니다.
 					</p>
-			    </article>
+					<div class="gallery">
+						<div class="gallery-item"><img src="https://i.imgur.com/5N2DYVl.jpeg" alt="Image 1"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/gmfF3KC.jpeg" alt="Image 2"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/25g1OEw.jpeg" alt="Image 4"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/ePlKiz1.jpeg" alt="Image 6"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/DHnjKDO.jpeg" alt="Image 5"></div>
+					</div>
+				</article>
+				<article class="section-article sub-section">
+					<h2 class="article-title lefter">남산~장충체육관 구간</h2>
+					<p class="article-description">
+						장충체육관 부근 산책로는 인근의 신라호텔과 산책로를 공유하고 있습니다.<br/>
+						다만 신라호텔 쪽 산책로는 펜스로 막혀있기 때문에 산책길이 좁고 낙후된 편입니다.<br/>
+						바로 옆에는 주택 지역이 존재하므로 주민들에게 피해가 가지 않도록 배려가 필요합니다.<br/>
+						신라호텔 ~ 반얀트리클럽 & 스파서울 안쪽 구간은 09:00~18:00에만 개방합니다.<br/>
+						다른 구간은 24시간 개방합니다.
+					</p>
+					<div class="gallery">
+						<div class="gallery-item"><img src="https://i.imgur.com/71vKWNu.jpeg" alt="Image 9"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/3QJ5G2u.jpeg" alt="Image 10"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/0fEV3f7.jpeg" alt="Image 8"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/m7fRHn2.jpeg" alt="Image 3"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/KfeQCJj.jpeg" alt="Image 7"></div>
+					</div>
+				</article>
 			</section>
 		</div>
+		<footer id="footer">
+			<h1 class="footer-title">웹프로그래밍(3162) #PA1</h1>
+			<h2 class="footer-subtitle">202211305 박지원</h2>
+			<p>7팀: 박지원, 김경수, 김도현, 한지훈</p>
+		</footer>
 	</div>
 </body>
 </html>
