@@ -156,6 +156,29 @@ ul, ol {
     text-align: left;
 }
 
+#title-wrapper {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.sns {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: 0.2s;
+    max-width: 200px;
+}
+
+.sns[href] > code:hover {
+    color: #F3F6AF !important;
+    background: #0C0950 !important;
+    transition: 0.2s;
+}
+
 .map-wrapper {
     margin: 0 auto;
     display: flex;
@@ -338,11 +361,11 @@ code {
     font-family: Pretendard Variable, sans-serif;
     font-size: 18px;
     justify-content: center;
-    gap: 5%;
+    gap: 20px;
 }
 
 .introduction {
-    width: 30%;
+    width: 35%;
     line-height: 27px;
 }
 
