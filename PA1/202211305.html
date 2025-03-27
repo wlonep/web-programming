@@ -29,18 +29,37 @@
 		<div id="content">
 			<section id="section-1">
 				<h1 class="section-title">나란 사람</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
-				</p>
-				<h2 class="section-subtitle">내 소개</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
-				</p>
-				<h2 class="section-subtitle">내 사진</h2>
-				<img src="https://placehold.co/280x430" alt="my-picture">
+				<div class="intro-wrapper">
+					<div class="introduction">
+						<h2 class="intro-title">내 소개</h2>
+						<b>이름</b>: 박지원<br/>
+						<b>성별</b>: 남성<br/>
+						<b>나이</b>: 21살(03년생)<br/>
+						<b>학부</b>: 컴퓨터공학부<br/>
+						<b>학번(학년)</b>: 22학번(2학년)<br/>
+						<b>사는 곳</b>: 서울 영등포구<br/>
+						<b>MBTI</b>: ISTJ<br/><br/>
+						<b>취미/관심사</b>
+						<ul>
+							<li>게임</li>
+							<li>코딩</li>
+						</ul>
+					</div>
+					<div class="introduction">
+						<h2 class="intro-title">기술 스택</h2>
+						<ul>
+							<li><b>언어</b>: Python, Javascript, Java, C++, C, SQL</li>
+							<li><b>프레임워크</b>: PIL, React, Node.js, NextJS</li>
+							<li><b>플랫폼</b>: Windows, Linux, Git</li>
+						</ul>
+					</div>
+					<div id="my-image">
+						<img src="https://placehold.co/280x430" alt="my-image">
+					</div>
+				</div>
 			</section>
 			<section id="section-2">
-				<h1 class="section-title">짝꿍 소개</h1>
+				<h1 class="section-title">짝꿍을 소개합니다</h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut dapibus lorem. Ut sit amet nisi ex. Pellentesque a augue egestas, malesuada ipsum eu, efficitur ligula. Mauris commodo nisi a nunc eleifend facilisis. Fusce placerat purus diam, id pulvinar felis efficitur nec. Aenean lacus ex, ornare a efficitur a, varius in orci. Aliquam nec consequat ante. Nunc et lacinia est. Morbi in convallis turpis, eu porta velit. Cras porta ipsum mauris, a interdum arcu dictum ac. Quisque vulputate dictum velit ac lacinia. Vestibulum vel semper tellus, dictum ullamcorper diam. Nam sit amet lobortis eros. Vivamus faucibus facilisis aliquet. Curabitur maximus at tellus finibus faucibus. Duis aliquet at turpis eget molestie.
 				</p>
@@ -113,7 +132,7 @@
 				</article>
 				<div class="article-wrapper" style="margin-top: -30px">
 					<article class="section-article">
-						<h3 class="section-title" style="text-align: left">숭례문(백범광장)</h3>
+						<h3 class="section-title-2">숭례문(백범광장)</h3>
 						<p><b>전철</b></p>
 						<ul style="list-style-type: '- '">
 							<li><code>서울역(1,4호선, GTX-A)</code> 4번 출구 → 도보 10분</li>
@@ -126,7 +145,7 @@
 						</ul>
 					</article>
 					<article class="section-article">
-						<h3 class="section-title" style="text-align: left">국립극장</h3>
+						<h3 class="section-title-2" style="text-align: left">국립극장</h3>
 						<p><b>전철</b></p>
 						<ul style="list-style-type: '- '">
 							<li><code>동대입구역(3호선)</code> 5번 출구 → 15분</li>
@@ -137,7 +156,7 @@
 						</ul>
 					</article>
 					<article class="section-article">
-						<h3 class="section-title" style="text-align: left">장충체육관</h3>
+						<h3 class="section-title-2" style="text-align: left">장충체육관</h3>
 						<p><b>전철</b></p>
 						<ul style="list-style-type: '- '">
 							<li><code>동대입구역(3호선)</code> 5번 출구</li>
@@ -155,14 +174,16 @@
 						특히 백범광장이나 장충체육관에서 01A번 버스를 이용하면 남산을 타고 백범광장에서 장충체육관까지 한 번에 갈 수 있기에 이를 이용해도 무방합니다.<br/>
 						다만 한양도성길을 온전히 따라가는 것은 아니기에 성곽의 모습과 주변 경치를 감상하고자 한다면 도보로 이동하거나 케이블카를 이용하는 것이 좋습니다.<br/>
 						백범광장에서 남산 구간을 도보로 이용한다면 그늘이 적고 계단이 많기에 마실 물이나 자외선 차단제 등을 챙기는 것을 권장합니다.<br/>
-						도심지 한가운데에 위치해 남산의 자연환경과 서울 도심지의 경치를 동시에 감상할 수 있습니다.
+						도심지 한가운데에 위치해 남산의 자연환경과 서울 도심지의 경치를 동시에 감상할 수 있습니다.<br/>
+						한양도성 유적전시관에서 남산 케이블카 부근으로 내려오면 남산돈까스 등 다양한 음식점과 카페가 있습니다.
 					</p>
 					<div class="gallery">
 						<div class="gallery-item"><img src="https://i.imgur.com/5N2DYVl.jpeg" alt="Image 1"></div>
-						<div class="gallery-item"><img src="https://i.imgur.com/gmfF3KC.jpeg" alt="Image 2"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/25g1OEw.jpeg" alt="Image 4"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/ePlKiz1.jpeg" alt="Image 6"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/DHnjKDO.jpeg" alt="Image 5"></div>
+						<div class="gallery-item"><img src="https://i.imgur.com/0fEV3f7.jpeg" alt="Image 8"></div>
+
 					</div>
 				</article>
 				<article class="section-article sub-section">
@@ -171,13 +192,13 @@
 						장충체육관 부근 산책로는 인근의 신라호텔과 산책로를 공유하고 있습니다.<br/>
 						다만 신라호텔 쪽 산책로는 펜스로 막혀있기 때문에 산책길이 좁고 낙후된 편입니다.<br/>
 						바로 옆에는 주택 지역이 존재하므로 주민들에게 피해가 가지 않도록 배려가 필요합니다.<br/>
-						신라호텔 ~ 반얀트리클럽 & 스파서울 안쪽 구간은 09:00~18:00에만 개방합니다.<br/>
-						다른 구간은 24시간 개방합니다.
+						장충체육관 앞에는 <code>카페 라</code>라는 카페가 있는데, 야외 공간이 있어 경치 감상과 함께 티타임을 즐길 수 있습니다.<br/>
+						맞은편에는 장충동 족발골목이 위치해 있어 산책 후 식사를 즐기기에 좋습니다.
 					</p>
 					<div class="gallery">
+						<div class="gallery-item"><img src="https://i.imgur.com/EPYdkje.jpeg" alt="Image 2"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/71vKWNu.jpeg" alt="Image 9"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/3QJ5G2u.jpeg" alt="Image 10"></div>
-						<div class="gallery-item"><img src="https://i.imgur.com/0fEV3f7.jpeg" alt="Image 8"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/m7fRHn2.jpeg" alt="Image 3"></div>
 						<div class="gallery-item"><img src="https://i.imgur.com/KfeQCJj.jpeg" alt="Image 7"></div>
 					</div>
