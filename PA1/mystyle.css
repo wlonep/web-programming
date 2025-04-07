@@ -369,12 +369,34 @@ code {
     line-height: 27px;
 }
 
+.introduction:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction:last-child img {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .introduction ul {
     margin-top: 0;
 }
 
 .image-wrapper {
     text-align: center;
+}
+
+.image-wrapper img {
+    width: 700px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .qa-wrapper {
