@@ -6,7 +6,7 @@ function calc() {
 	sum.value = parseInt(x) + parseInt(y);
 }
 
-let computerNumber = Math.floor(Math.random() * 100);
+let computerNumber = Math.floor(Math.random() * 100 + 1);
 let nGuesses = 0;
 
 function numGuess() {
