@@ -33,26 +33,7 @@
 		</div>
 		<div class="lab">
 			<h3>구구단 표</h3>
-			<table border="0" class="gugudan">
-				<tr>
-					<script>
-						for (let i = 2; i < 10; i++) {
-							document.write(`<th>${i}단</th>`)
-						}
-					</script>
-				</tr>
-				<script>
-					let content = ""
-					for (let i = 1; i < 10; i++) {
-						content += "<tr>"
-						for (let j = 2; j < 10; j++) {
-							content += `<td>${j}x${i}=${i * j}</td>`
-						}
-						content += "</tr>"
-					}
-					document.write(content);
-				</script>
-			</table>
+			<table border="0" id="gugudan"></table>
 		</div>
 		<div class="lab">
 			<h3>숫자 맞히기 게임</h3>
@@ -69,6 +50,15 @@
 				힌트: <input type="text" id="result" size="16">
 				<input type="text" id="answer" size="16">
 			</form>
+		</div>
+		<div class="lab">
+			<h3>단어장</h3><br/>
+			<button class="wordButton" onclick="addWord()">단어 추가</button>
+			<button class="wordButton" onclick="showWordList()">단어 리스트 보기</button>
+			<button class="wordButton" onclick="sortWord()">단어 정렬</button>
+			<button class="wordButton" onclick="shuffleWord()">단어 섞기</button>
+			<br><br><p><strong>단어 리스트</strong></p>
+			<div id="wordList"></div>
 		</div>
 	</div>
 	<footer>

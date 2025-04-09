@@ -47,6 +47,10 @@ header > nav {
 	float: right;
 	border: 1px dashed orange;
 	border-radius: 15px;
+	text-align: center;
+	font-family: GongGothic, sans-serif;
+	line-height: 36px;
+	font-weight: bold;
 }
 .main-menu {
 	display: block;
@@ -78,12 +82,23 @@ footer > p {
 	margin-top: 10px;
 }
 
-.gugudan, td, th {
+#gugudan, td, th {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
 
-.gugudan td, .gugudan th {
+#gugudan td, #gugudan th {
 	width: 60px;
 	text-align: center;
+}
+
+.wordButton {
+	display: inline-block;
+	width: 150px;
+}
+
+#wordList {
+	font-size: 24px;
+	font-weight: bold;
+	color: blue;
 }
