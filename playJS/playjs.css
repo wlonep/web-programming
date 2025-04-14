@@ -102,3 +102,17 @@ footer > p {
 	font-weight: bold;
 	color: blue;
 }
+
+#hangman {
+	text-align: center;
+}
+
+#newgamearea {
+	margin-top: 2em;
+}
+
+#clue, #guessstr {
+	font-family: monospace;
+	font-size: 2em;
+	padding: 1em;
+}

@@ -58,8 +58,12 @@ function setCTime() {
 }
 
 
-var WORD_LIST = ["obdurate", "verisimilitude", "defenestrate", "obsequious",
+var WORD_LIST = ["apple", "obdurate", "verisimilitude", "defenestrate", "obsequious",
 				"dissonant", "today", "idempotent"];
+const MAX_GUESSES = 6;
+var guesses = "";
+var guessCount = MAX_GUESSES;
+var word;
 
 function showWordList() {
 	document.querySelector('#wordList').innerText = WORD_LIST.join(", ");
@@ -89,4 +93,48 @@ function shuffleWord() {
 		WORD_LIST[j] = temp;
 	}
 	showWordList();
+}
+
+function newGame () {
+	word = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
+	guessCount = MAX_GUESSES;
+	guesses = "";
+	document.querySelector('#guessbutton').disabled = false;
+	document.querySelector('#hguess').value = "";
+	updatePage();
+}
+
+function guessLetter() {
+	const letter = document.querySelector('#hguess').value;
+	if (guesses.indexOf(letter) >= 0 || 
+		document.querySelector('#guessstr').innerHTML.indexOf(guesses) < 0) 
+		return;
+	guesses += letter;
+	if (word.indexOf(letter) < 0) {
+		guessCount--;
+	}
+	updatePage();
+}
+
+function updatePage() {
+	let src = `hangman/hangman${guessCount}.gif`;
+	document.querySelector('#hangmanpic').src = src;
+	const clue = document.querySelector('#clue');
+	let content = "";
+	for (let i = 0; i < word.length; i++) {
+		if (guesses.indexOf(word.charAt(i)) >= 0)
+			content += `${word.charAt(i)} `;
+		else
+			content += '_ ';
+	}
+	clue.innerText = content;
+
+	const guessStr = document.querySelector('#guessstr');
+	if (guessCount === 0)
+		guessStr.innerHTML = 'You Lose';
+	else if (content.indexOf('_') < 0)
+		guessStr.innerHTML = 'You Win';
+	else {
+		guessStr.innerHTML = `Guesses : ${guesses}`;
+	}
 }

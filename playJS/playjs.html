@@ -61,6 +61,20 @@
 			<div id="wordList"></div>
 		</div>
 	</div>
+	<div id="hangman">
+		<div>
+			<img id="hangmanpic" src="hangman/hangman6.gif" alt="hangman"/>
+		</div>
+		<div id="clue">Press New Game to play!</div>
+		<div>
+			<input id="hguess" type="text" size="1" maxlength="1"/>
+			<button id="guessbutton" onclick="guessLetter();" disabled>Guess</button>
+		</div>
+		<div id="newgamearea">
+			<button onclick="newGame();">New Game</button>
+		</div>
+		<div id="guessstr"></div>
+	</div>
 	<footer>
 		<p>Web Programming, Spring 2025</p>
 		<p>Created by 박지원</p>
