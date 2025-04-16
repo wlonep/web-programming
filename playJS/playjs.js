@@ -138,3 +138,44 @@ function updatePage() {
 		guessStr.innerHTML = `Guesses : ${guesses}`;
 	}
 }
+
+function innerTest() {
+	const input = prompt();
+	document.querySelector('#innerTest').innerHTML = input;
+}
+
+function changeImage() {
+	let img1 = 'img1.png';
+	let img2 = 'img2.jpg';
+
+	if (img.src.includes(img1))
+		img.src = img2;
+	else
+		img.src = img1;
+}
+
+var colorNames = ["maroon", "red", "orange", "yellow", "olive", "purple", "fuchsia", 
+	"white", "lime", "green"," navy", "blue", "aqua", "teal", "black", "silver", "gray"]
+
+function createColorTable() {
+	const table = document.querySelector('#colorTable');
+	for (let i = 0; i < colorNames.length; i++) {
+		let elem = document.createElement('div');
+		elem.setAttribute("class", "ctbox");
+		elem.style.cssText = "display: inline-block;width: 60px; padding: 10px;"
+		elem.style.backgroundColor = colorNames[i];
+		elem.innerText = colorNames[i];
+		table.appendChild(elem);
+	}
+}
+
+function removeColorTable() {
+	const table = document.getElementById('colorTable');
+	table.replaceChildren();
+	// Array.from(table.childNodes).forEach((e) => table.removeChild(e))
+	/*const box = Array.from(table.childNodes);
+
+	for (let i = 0; i < box.length; i++) {
+		table.removeChild(box[i]);
+	}*/
+}
