@@ -171,7 +171,9 @@ function createColorTable() {
 
 function removeColorTable() {
 	const table = document.getElementById('colorTable');
-	table.replaceChildren();
+	// table.replaceChildren();
+	while (table.hasChildNodes())
+		table.removeChild(table.firstChild)
 	// Array.from(table.childNodes).forEach((e) => table.removeChild(e))
 	/*const box = Array.from(table.childNodes);
 
