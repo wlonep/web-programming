@@ -14,6 +14,7 @@ window.onload = () => {
 		content += "</tr>"
 	}
 	doc.innerHTML = content;
+	changeColor();
 }
 
 function calc() {
@@ -171,13 +172,37 @@ function createColorTable() {
 
 function removeColorTable() {
 	const table = document.getElementById('colorTable');
+	const box = table.querySelectorAll('.ctbox');
+	for (let i = 0; i < box.length; i++) {
+		table.removeChild(box[i]);
+	}
+
+	// const table = document.getElementById('colorTable');
 	// table.replaceChildren();
-	while (table.hasChildNodes())
-		table.removeChild(table.firstChild)
-	// Array.from(table.childNodes).forEach((e) => table.removeChild(e))
+	// while (table.hasChildNodes())
+	// 	table.removeChild(table.firstChild)
+	// // Array.from(table.childNodes).forEach((e) => table.removeChild(e))
 	/*const box = Array.from(table.childNodes);
 
 	for (let i = 0; i < box.length; i++) {
 		table.removeChild(box[i]);
 	}*/
+}
+
+var colorCount = 0;
+var colorChange;
+
+function changeColor() {
+	let backColors = ["green", "yellow"];
+	let textColors = ["red", "blue"];
+	colorChange = setInterval(() => {
+		const target = document.querySelector('#target');
+		target.style.backgroundColor = backColors[colorCount % 2];
+		target.style.color = textColors[colorCount % 2];
+		colorCount++;
+	}, 1000);
+}
+
+function stopTextColor() {
+	clearInterval(colorChange);
 }
