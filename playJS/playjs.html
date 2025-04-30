@@ -28,7 +28,7 @@
 				첫 번째 정수: <input id="x"><br/>
 				두 번째 정수: <input id="y"><br/>
 				합계: <input id="sum"><br/>
-				<input type="button" value="계산" onclick="calc();">
+				<input type="button" value="계산" id="calc">
 			</form>
 		</div>
 		<div class="lab">
@@ -43,8 +43,8 @@
 			</p>
 			<form>
 				숫자: <input type="text" id="user" size="5">
-				<input type="button" value="확인" onclick="numGuess();">
-				<input type="button" value="다시시작" onclick="replay();">
+				<input type="button" value="확인" id="numGuess">
+				<input type="button" value="다시시작" id="replay">
 				<br/><br/>
 				추측 횟수: <input type="text" id="guesses" size="5">
 				힌트: <input type="text" id="result" size="16">
@@ -53,30 +53,37 @@
 		</div>
 		<div class="lab">
 			<h3>단어장</h3><br/>
-			<button class="wordButton" onclick="addWord()">단어 추가</button>
-			<button class="wordButton" onclick="showWordList()">단어 리스트 보기</button>
-			<button class="wordButton" onclick="sortWord()">단어 정렬</button>
-			<button class="wordButton" onclick="shuffleWord()">단어 섞기</button>
+			<button class="wordButton" id="addWord">단어 추가</button>
+			<button class="wordButton" id="showWordList">단어 리스트 보기</button>
+			<button class="wordButton" id="sortWord">단어 정렬</button>
+			<button class="wordButton" id="shuffleWord">단어 섞기</button>
 			<br><br><p><strong>단어 리스트</strong></p>
 			<div id="wordList"></div>
 		</div>
 		<div class="lab">
 			<h2>innerHTML TEST</h2>
-			<p id="innerTest" onclick="innerTest();">여기를 눌러보세요.</p>
+			<p id="innerTest">여기를 눌러보세요.</p>
 		</div>
 		<div class="lab">
 			<img id="img" src="img1.png" width="150px">
-			<button onclick="changeImage();">이미지 변경</button>
+			<button id="changeImage">이미지 변경</button>
 		</div>
 		<div class="lab">
 			<h3>색상 테이블 출력하기</h3>
-			<input id="ctCreate" type="button" value="출력하기" onclick="createColorTable();">
-			<input id="ctRemove" type="button" value="없애기" onclick="removeColorTable();">
+			<input id="ctCreate" type="button" value="출력하기">
+			<input id="ctRemove" type="button" value="없애기">
 			<div id="colorTable"></div>
 		</div>
 		<div class="lab">
 			<div id="target">This is a Text</div>
-			<button onclick="stopTextColor();">중지</button>
+			<button id="stopTextColor">중지</button>
+		</div>
+		<div class="lab">
+			<h3>상자 이동하기</h3>
+			<p><button id="moveBox">Click Me</button></p>
+			<div id="container">
+				<div id="animate"></div>
+			</div>
 		</div>
 	</div>
 	<div id="hangman">
@@ -86,10 +93,10 @@
 		<div id="clue">Press New Game to play!</div>
 		<div>
 			<input id="hguess" type="text" size="1" maxlength="1"/>
-			<button id="guessbutton" onclick="guessLetter();" disabled>Guess</button>
+			<button id="guessLetter" disabled>Guess</button>
 		</div>
 		<div id="newgamearea">
-			<button onclick="newGame();">New Game</button>
+			<button id="newGame">New Game</button>
 		</div>
 		<div id="guessstr"></div>
 	</div>

@@ -15,6 +15,12 @@ window.onload = () => {
 	}
 	doc.innerHTML = content;
 	changeColor();
+	window.addEventListener("click", (e) => { 
+		if (typeof(window[e.target.id]) == "function") {
+			const exec = new Function(`return ${e.target.id}`)();
+			exec();
+		}
+	})
 }
 
 function calc() {
@@ -100,7 +106,7 @@ function newGame () {
 	word = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
 	guessCount = MAX_GUESSES;
 	guesses = "";
-	document.querySelector('#guessbutton').disabled = false;
+	document.querySelector('#guessLetter').disabled = false;
 	document.querySelector('#hguess').value = "";
 	updatePage();
 }
@@ -158,7 +164,8 @@ function changeImage() {
 var colorNames = ["maroon", "red", "orange", "yellow", "olive", "purple", "fuchsia", 
 	"white", "lime", "green"," navy", "blue", "aqua", "teal", "black", "silver", "gray"]
 
-function createColorTable() {
+function ctCreate() {
+	console.log(1)
 	const table = document.querySelector('#colorTable');
 	for (let i = 0; i < colorNames.length; i++) {
 		let elem = document.createElement('div');
@@ -205,4 +212,15 @@ function changeColor() {
 
 function stopTextColor() {
 	clearInterval(colorChange);
+}
+
+function moveBox() {
+	const box = document.querySelector('#animate');
+	var pos = 0;
+	const move = setInterval(() => {
+		if (pos >= 350) clearInterval(move);
+		pos++;
+		box.style.top = `${pos}px`;
+		box.style.left = `${pos}px`;
+	}, 5)
 }
