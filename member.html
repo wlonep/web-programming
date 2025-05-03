@@ -1,113 +1,114 @@
 ﻿<!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<title>HTML</title>
-	</head>
-	<style>
-		table, th, td {
-	    	border: 1px solid black;
-	        border-collapse: collapse;
-		}
-		td {
-			width: 100px;
-			height: 20px;
-			
-			padding: 5px;
-		}
-	</style>
-	<body>
-		<h1>회원가입</h1>
-		<form name="myform" method="POST">
-			<table>
-				<tr>
-					<td>아이디</td>
-					<td><input type="text" size="15" maxlength="12" name="id"></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="text" size="15" maxlength="12" name="name"></td>
-				</tr>
-				<tr>
-					<td>비밀번호</td>
-					<td><input type="password" size="15" maxlength="10" name="password"></td>
-				</tr>
-				<tr>
-					<td>성별</td>
-					<td>
-						<input type="radio" id="male" name="gender" value="male" checked>
-						<label for="male">남</label> 
-						<input type="radio" id="female" name="gender" value="female">
-						<label for="female">여</label>
-					</td>
-				</tr>
-				<tr>
-					<td>휴대전화</td>
-					<td>
-						<select name="tel-1">
-							<option value="010" selected>010</option>
-							<option value="011">011</option>
-							<option value="016">016</option>
-							<option value="017">017</option>
-							<option value="070">070</option>
-						</select>-
-						<input type="text" name="tel-2" maxlength="4" size="4">-
-						<input type="text" name="tel-3" maxlength="4" size="4">
-					</td>
-				</tr>
-				<tr>
-					<td>주소</td>
-					<td><input type="text" name="address" size="50"></td>
-				</tr>
-				<tr>
-					<td>취미</td>
-					<td>
-						<input type="checkbox" name="hobby1" id="h1" value="music">
-						<label for="h1">음악감상</label>
-						<input type="checkbox" name="hobby2" id="h2" value="game">
-						<label for="h2">게임</label>
-						<input type="checkbox" name="hobby3" id="h3" value="code">
-						<label for="h3">코딩</label>
-						<input type="checkbox" name="hobby4" id="h4" value="read">
-						<label for="h4">독서</label>
-					</td>
-				</tr>
-				<tr>
-					<td>자기소개</td>
-					<td><textarea name="introduction" rows="5" cols="60"></textarea></td>
-				</tr>
-			</table>
-			<div>
-				<input type="button" value="회원가입" onclick="show()">
-				<input type="reset" value="다시 작성">
-			</div>
-		</form>
-		<script>
-			function show() {
-				const form = document.myform;
-				let id = form["id"].value;
-				let name = form["name"].value;
-				let password = form["password"].value;
-				if (!id) return alert("아이디를 입력하세요.");
-				if (!name) return alert("이름을 입력하세요.");
-				if (!password) return alert("비밀번호를 입력하세요.");
+<head>
+    <title>HTML</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
 
-				if (!/.{6,}/.test(id)) return alert("아이디는 6자 이상 입력하세요.");
-				if (!/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$])(?!.*[~!%^&*|\\'"`;:/? ])[\s\S]{6,}$/.test(password))
-					return alert("비밀번호는 6자 이상, 영문/숫자/특수문자(@#$)를 하나 이상 포함해야 합니다.\n" +
-							"특수문자는 ~!%^&*|\\'\"`;:/? 를 제외한 문자로 입력하세요.");
+    td {
+        width: 100px;
+        height: 20px;
 
-				let gender = form["gender"].value;
-				let cell = form["tel-1"].value + form["tel-2"].value + form["tel-3"].value;
-				let address = form["address"].value;
-				let hobby = ""
-				for (let i = 1; i <= 4; i++) {
-					if (form[`hobby${i}`].checked)
-						hobby += form[`hobby${i}`].value + " ";
-				}
-				let str = `id: ${id}\nname: ${name}\npassword: ${password}\ngender: ${gender}\ncell: ${cell}\naddress: ${address}\nhobby: ${hobby.replace(' ', ', ')}\n자기소개:\n`;
-				str += form["introduction"].value;
-				alert(str)
-			}
-		</script>
-	</body>
+        padding: 5px;
+    }
+</style>
+<body>
+<h1>회원가입</h1>
+<form name="myform" method="POST">
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" size="15" maxlength="12" name="id"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td><input type="text" size="15" maxlength="12" name="name"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" size="15" maxlength="10" name="password"></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">남</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">여</label>
+            </td>
+        </tr>
+        <tr>
+            <td>휴대전화</td>
+            <td>
+                <select name="tel-1">
+                    <option value="010" selected>010</option>
+                    <option value="011">011</option>
+                    <option value="016">016</option>
+                    <option value="017">017</option>
+                    <option value="070">070</option>
+                </select>-
+                <input type="text" name="tel-2" maxlength="4" size="4">-
+                <input type="text" name="tel-3" maxlength="4" size="4">
+            </td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" name="address" size="50"></td>
+        </tr>
+        <tr>
+            <td>취미</td>
+            <td>
+                <input type="checkbox" name="hobby1" id="h1" value="music">
+                <label for="h1">음악감상</label>
+                <input type="checkbox" name="hobby2" id="h2" value="game">
+                <label for="h2">게임</label>
+                <input type="checkbox" name="hobby3" id="h3" value="code">
+                <label for="h3">코딩</label>
+                <input type="checkbox" name="hobby4" id="h4" value="read">
+                <label for="h4">독서</label>
+            </td>
+        </tr>
+        <tr>
+            <td>자기소개</td>
+            <td><textarea name="introduction" rows="5" cols="60"></textarea></td>
+        </tr>
+    </table>
+    <div>
+        <input type="button" value="회원가입" onclick="show()">
+        <input type="reset" value="다시 작성">
+    </div>
+</form>
+<script>
+    function show() {
+        const form = document.myform;
+        let id = form["id"].value;
+        let name = form["name"].value;
+        let password = form["password"].value;
+        if (!id) return alert("아이디를 입력하세요.");
+        if (!name) return alert("이름을 입력하세요.");
+        if (!password) return alert("비밀번호를 입력하세요.");
+
+        if (!/.{6,}/.test(id)) return alert("아이디는 6자 이상 입력하세요.");
+        if (!/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$])(?!.*[~!%^&*|\\'"`;:/? ])[\s\S]{6,}$/.test(password))
+            return alert("비밀번호는 6자 이상, 영문/숫자/특수문자(@#$)를 하나 이상 포함해야 합니다.\n" +
+                "특수문자는 ~!%^&*|\\'\"`;:/? 를 제외한 문자로 입력하세요.");
+
+        let gender = form["gender"].value;
+        let cell = form["tel-1"].value + form["tel-2"].value + form["tel-3"].value;
+        let address = form["address"].value;
+        let hobby = ""
+        for (let i = 1; i <= 4; i++) {
+            if (form[`hobby${i}`].checked)
+                hobby += form[`hobby${i}`].value + " ";
+        }
+        let str = `id: ${id}\nname: ${name}\npassword: ${password}\ngender: ${gender}\ncell: ${cell}\naddress: ${address}\nhobby: ${hobby.replace(' ', ', ')}\n자기소개:\n`;
+        str += form["introduction"].value;
+        alert(str)
+    }
+</script>
+</body>
 </html>
