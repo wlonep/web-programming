@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Pen+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	<script src="playjs.js"></script>
 </head>
-<body>
+<body >
 	<header>
 		<div id="title">Play with JS!</div>
 		<div id="ctime"></div>
@@ -28,31 +28,12 @@
 				첫 번째 정수: <input id="x"><br/>
 				두 번째 정수: <input id="y"><br/>
 				합계: <input id="sum"><br/>
-				<input type="button" value="계산" onclick="calc();">
+				<input type="button" value="계산" id="calc">
 			</form>
 		</div>
 		<div class="lab">
 			<h3>구구단 표</h3>
-			<table border="0" class="gugudan">
-				<tr>
-					<script>
-						for (let i = 2; i < 10; i++) {
-							document.write(`<th>${i}단</th>`)
-						}
-					</script>
-				</tr>
-				<script>
-					let content = ""
-					for (let i = 1; i < 10; i++) {
-						content += "<tr>"
-						for (let j = 2; j < 10; j++) {
-							content += `<td>${j}x${i}=${i * j}</td>`
-						}
-						content += "</tr>"
-					}
-					document.write(content);
-				</script>
-			</table>
+			<table border="0" id="gugudan"></table>
 		</div>
 		<div class="lab">
 			<h3>숫자 맞히기 게임</h3>
@@ -62,14 +43,62 @@
 			</p>
 			<form>
 				숫자: <input type="text" id="user" size="5">
-				<input type="button" value="확인" onclick="numGuess();">
-				<input type="button" value="다시시작" onclick="replay();">
+				<input type="button" value="확인" id="numGuess">
+				<input type="button" value="다시시작" id="replay">
 				<br/><br/>
 				추측 횟수: <input type="text" id="guesses" size="5">
 				힌트: <input type="text" id="result" size="16">
 				<input type="text" id="answer" size="16">
 			</form>
 		</div>
+		<div class="lab">
+			<h3>단어장</h3><br/>
+			<button class="wordButton" id="addWord">단어 추가</button>
+			<button class="wordButton" id="showWordList">단어 리스트 보기</button>
+			<button class="wordButton" id="sortWord">단어 정렬</button>
+			<button class="wordButton" id="shuffleWord">단어 섞기</button>
+			<br><br><p><strong>단어 리스트</strong></p>
+			<div id="wordList"></div>
+		</div>
+		<div class="lab">
+			<h2>innerHTML TEST</h2>
+			<p id="innerTest">여기를 눌러보세요.</p>
+		</div>
+		<div class="lab">
+			<img id="img" src="img1.png" width="150px">
+			<button id="changeImage">이미지 변경</button>
+		</div>
+		<div class="lab">
+			<h3>색상 테이블 출력하기</h3>
+			<input id="ctCreate" type="button" value="출력하기">
+			<input id="ctRemove" type="button" value="없애기">
+			<div id="colorTable"></div>
+		</div>
+		<div class="lab">
+			<div id="target">This is a Text</div>
+			<button id="stopTextColor">중지</button>
+		</div>
+		<div class="lab">
+			<h3>상자 이동하기</h3>
+			<p><button id="moveBox">Click Me</button></p>
+			<div id="container">
+				<div id="animate"></div>
+			</div>
+		</div>
+	</div>
+	<div id="hangman">
+		<div>
+			<img id="hangmanpic" src="hangman/hangman6.gif" alt="hangman"/>
+		</div>
+		<div id="clue">Press New Game to play!</div>
+		<div>
+			<input id="hguess" type="text" size="1" maxlength="1"/>
+			<button id="guessLetter" disabled>Guess</button>
+		</div>
+		<div id="newgamearea">
+			<button id="newGame">New Game</button>
+		</div>
+		<div id="guessstr"></div>
 	</div>
 	<footer>
 		<p>Web Programming, Spring 2025</p>
