@@ -3,13 +3,6 @@ let imgCounter = 0;
 const imgArray = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png"];
 
 $(document).ready(() => {
-    $("#imgAlbum")
-        .attr("src", imgArray[imgCounter])
-        .click(() => {
-        imgCounter = (imgCounter + 1) % imgArray.length;
-        $("#imgAlbum").attr("src", imgArray[imgCounter]);
-    });
-
     $("div.out").mouseover(() => {
         $("div.out p:first-child").text("mouse over");
         $("div.out p:nth-child(2)").text(i);
@@ -49,7 +42,12 @@ $(document).ready(() => {
         $(e.target).attr("src", newSrc);
     });
 
-
+    $("#imgAlbum")
+        .attr("src", imgArray[imgCounter])
+        .click(() => {
+        imgCounter = (imgCounter + 1) % imgArray.length;
+        $("#imgAlbum").attr("src", imgArray[imgCounter]);
+    });
 })
 
 function update(j) {
