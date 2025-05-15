@@ -3,13 +3,6 @@ let imgCounter = 0;
 const imgArray = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png"];
 
 $(document).ready(() => {
-    $("#imgAlbum")
-        .attr("src", imgArray[imgCounter])
-        .click(() => {
-        imgCounter = (imgCounter + 1) % imgArray.length;
-        $("#imgAlbum").attr("src", imgArray[imgCounter]);
-    });
-
     $("div.out").mouseover(() => {
         $("div.out p:first-child").text("mouse over");
         $("div.out p:nth-child(2)").text(i);
@@ -49,6 +42,50 @@ $(document).ready(() => {
         $(e.target).attr("src", newSrc);
     });
 
+    $("#imgAlbum")
+        .attr("src", imgArray[imgCounter])
+        .click(() => {
+        imgCounter = (imgCounter + 1) % imgArray.length;
+        $("#imgAlbum").attr("src", imgArray[imgCounter]);
+    });
+
+    $("#add_img img").click(() => {
+        $("#note_form").fadeIn().addClass("popup");
+        change_position($(".popup"));
+    });
+
+    $("#add_note").click(() => {
+        $("#note_form").fadeOut(() => {$(this).removeClass("popup")});
+        $("#note").append(`${$("#note_title").val()}<br/>${$("#note_date").val()}<br/>${$("#note_content").val()}<br/><br/>`);
+    });
+
+    $(window).resize(() => {
+        change_position($(".popup"));
+    });
+
+    $("#moving_button").click(() => {
+        const width = $("#moving_box").css("width");
+        if (parseInt(width) + 50 >= parseInt($("#animation_test").css("width"))) return;
+        const height = $("#animation_test").css("height");
+        $("#moving_box").animate({"right": 0, 
+            "width": "+=50px", 
+            "height": "+=50px"});
+        $("#animation_test").css({"height": "+=50px"})
+    });
+
+    $(".accordion").each(function() {
+        const dds = $(this).find("dd");
+        const dt = $(this).find("dt");
+        dt.css("cursor", "pointer");
+        dds.hide();
+
+        dt.click((e) => {
+            dds.css({"display": "none"});
+            $(e.target).css("cursor", "default");
+            $(e.target).next().css({"display": "block"});
+        });
+    })
+
 
 })
 
@@ -66,3 +103,10 @@ function max_open(event) {
     maxwindow.moveTo(0, 0);
     maxwindow.resizeTo(screen.availWidth, screen.availHeight);
 }
+
+function change_position(obj) {
+    let left = ($(window).width() - obj.width())/2;
+    let top = ($(window).height() - obj.height())/2;
+    obj.css({"top": top, "left": left});
+}
+
