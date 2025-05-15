@@ -66,7 +66,6 @@ $(document).ready(() => {
     $("#moving_button").click(() => {
         const width = $("#moving_box").css("width");
         if (parseInt(width) + 50 >= parseInt($("#animation_test").css("width"))) return;
-        const height = $("#animation_test").css("height");
         $("#moving_box").animate({"right": 0, 
             "width": "+=50px", 
             "height": "+=50px"});
@@ -81,6 +80,7 @@ $(document).ready(() => {
 
         dt.click((e) => {
             dds.css({"display": "none"});
+            dt.css("cursor", "pointer");
             $(e.target).css("cursor", "default");
             $(e.target).next().css({"display": "block"});
         });
