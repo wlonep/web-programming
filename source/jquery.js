@@ -74,19 +74,41 @@ $(document).ready(() => {
 
     $(".accordion").each(function() {
         const dds = $(this).find("dd");
-        const dt = $(this).find("dt");
-        dt.css("cursor", "pointer");
-        dds.hide();
-
-        dt.click((e) => {
-            dds.css({"display": "none"});
-            dt.css("cursor", "pointer");
-            $(e.target).css("cursor", "default");
-            $(e.target).next().css({"display": "block"});
+        const dts = $(this).find("dt");
+        function closeAll() {
+            dds.addClass("closed");
+            dts.addClass("closed");
+        }
+        function open(dt, dd) {
+            dt.removeClass("closed");
+            dd.removeClass("closed");
+        }
+        closeAll();
+        dts.click((e) => {
+            closeAll();
+            open($(e.target), $(e.target).next());
         });
     })
 
-
+    $('.slideshow').each(function() {
+        const container = $(this);
+        let timer;
+        function switchImg() {
+            const imgs = container.find("img");
+            const first = imgs.eq(0);
+            const second = imgs.eq(1);
+            first.appendTo(container).fadeOut(2000);
+            second.fadeIn();
+        }
+        function startTimer() {
+            timer = setInterval(switchImg, 3000);
+        }
+        function stopTimer() {
+            clearInterval(timer);
+        }
+        container.hover(stopTimer, startTimer);
+        startTimer();
+    })
 })
 
 function update(j) {

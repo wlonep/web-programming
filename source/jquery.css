@@ -138,6 +138,10 @@ div.out p {
     background: blue;
 }
 
+.accordion {
+    margin-bottom: 10px;
+}
+
 dl {
     width: 420px;
     margin: 0 auto;
@@ -150,7 +154,16 @@ dt {
     padding: 8px 12px;
     border-radius: 3px;
     margin: 0 0 2px;
+    cursor: default;
+}
+
+dt.closed {
+    background: #9396a2;
     cursor: pointer;
+}
+
+dd.closed {
+    display: none;
 }
 
 dd {
@@ -159,4 +172,23 @@ dd {
     background: #fff;
     padding: 10px 20px;
     margin: 0 0 2px;
+}
+
+.slideshow {
+    width: 210px;
+    height: 150px;
+    margin: 10px 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 5px solid #dfdfdf;
+}
+
+.slideshow img.alt {
+    display: none;
 }
