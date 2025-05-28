@@ -108,6 +108,37 @@ $(document).ready(() => {
         }
         container.hover(stopTimer, startTimer);
         startTimer();
+    });
+
+    $("#getText1").on("click", () => {
+        $("#textbox").text("글자 입력 테스트");
+        const req = $.ajax("data.json");
+        req.done((data, status) => {
+            // JSON.parse(data).forEach((d) => $("#textbox").append('<br/>' + d.name));
+            data.forEach((d) => $("#textbox").append('<br/>' + d.name));
+        })
+    });
+
+    $("#getText2").on("click", () => {
+        const tb = $("<table />");
+        tb.append($("<tr />").append(
+            $("<th />").text("이름"),
+            $("<th />").text("아이디"),
+            $("<th />").text("학과"),
+            $("<th />").text("수강과목"),
+        ))
+        const req = $.get("data.json", (data, status) => {
+            data.forEach((d, i) => {
+                const row = $("<tr />").append(
+                    $("<td />").text(d.name),
+                    $("<td />").text(d.id),
+                    $("<td />").text(d.department),
+                    $("<td />").text(d.class.join(", ")),
+                );
+                tb.append(row);
+            });
+        });
+        $("#textbox").html(tb);
     })
 })
 
